@@ -1,0 +1,325 @@
+body {
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 1316px;
+  margin: 0px auto;
+  background-color: #f1f3f2;
+  padding: 17px;
+}
+
+.form {
+  border: 1px solid #bec1c3;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.ethernet {
+  width: 50%;
+  border-right: 1px solid #e0e4e7;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wireless {
+  width: 50%;
+  padding: 20px 15px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  width: 100%;
+  border-top: 1px solid #bec1c3;
+  padding: 8px 15px;
+}
+
+.radio {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.radio__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.radio__label {
+  font-size: 14px;
+  line-height: 20px;
+  vertical-align: super;
+  color: #717171;
+  padding-left: 30px;
+  position: relative;
+}
+
+.radio__label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #717171;
+}
+
+.radio__input:checked + .radio__label:before{
+  border-color: #1aa8eb;
+  background-color: #1aa8eb;
+}
+
+.radio__label:after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  left: 6px;
+  top: 5px;
+}
+
+.radio__input:disabled + .radio__label{
+  color: #bec1c3;
+}
+
+.radio__input:checked.radio__input:disabled + .radio__label:before{
+  border-color: #8cd3f5;
+  background-color: #8cd3f5;
+}
+
+.radio__input:not(:checked).radio__input:disabled + .radio__label:before{
+  border-color: #bec1c3;
+}
+
+
+.text {
+  text-align: end;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.text__input {
+  width: 50%;
+  font-size: 14px;
+  line-height: 35px;
+  padding-left: 5px;
+  color: #717171;
+  border: 1px solid #717171;
+  float: right;
+}
+
+.text__input:disabled {
+  background-color: #fff;
+  border: 1px solid #d6d7e0;
+}
+
+.text__input:disabled + .text__label {
+  color: #bec1c3;
+}
+
+.text__label {
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 15px;
+  color: #717171;
+  line-height: 35px;
+}
+
+.text__label_red {
+  color: red;
+}
+
+.text__error {
+  position: absolute;
+  right: 51%;
+  bottom: -2px;
+  font-size: 10px;
+  color: red;
+}
+
+.check {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.check__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.check__text {
+  font-size: 14px;
+  padding-left: 30px;
+  color: #717171;
+}
+
+.check__input:disabled + .check__text {
+  color: #bec1c3;
+}
+
+.check__text:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #bec1c3;
+  background-color: #fff;
+}
+
+.check__input:checked + .check__text:before {
+  background-color: #1aa8eb;
+  border-color: #1aa8eb;
+}
+
+.check__input:checked + .check__text:after {
+  content: '\2714';
+  position: absolute;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+  left: 3px;
+  top: -3px;
+  color: #fff;
+}
+
+.button__save {
+  line-height: 30px;
+  background-color: #1aa8eb;
+  width: 105px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 14px;
+  margin-right: 15px;
+  outline: none;
+  cursor: pointer;
+  transition: all .1s;
+}
+
+.button__cancel {
+  line-height: 30px;
+  background-color: #fff;
+  width: 105px;
+  padding: 0 10px;
+  border: none;
+  border: 1px solid #1aa8eb;
+  border-radius: 15px;
+  color: #1aa8eb;
+  font-size: 14px;
+  margin-right: 15px;
+  outline: none;
+  cursor: pointer;
+  transition: all .1s;
+}
+
+
+
+.button__cancel:hover, .button__save:hover {
+  box-shadow: 2px 2px 8px rgb(105, 105, 105);
+  transform: scale(1.05);
+}
+.button__cancel:active, .button__save:active {
+  transform: scale(0.9);
+  box-shadow: none;
+}
+
+.select {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.select__label {
+  width: 50%;
+  text-align: right;
+  padding-right: 15px;
+  font-size: 14px;
+  color: #717171;
+}
+
+.disabled {
+  opacity: 50%;
+}
+
+.select__container {
+  flex-grow: 1;
+}
+
+.select__indicator-separator {
+  display: none;
+}
+
+.select__container .select__control {
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  border-color: #717171;
+}
+.select-container .select__control:hover {
+}
+
+.select__control.select__control--is-disabled {
+  background-color: #fff;
+  opacity: 50%;
+}
+
+.select__button {
+  border: 2px solid #bec1c3;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  float: right;
+  margin: 0 20px;
+  outline: none;
+  font-size: 24px;
+  color: #717171;
+  line-height: 22px;
+}
+
+
+.select__button:not(.disabled):hover {
+  background-color: #1aa8eb;
+  color: #fff;
+  border-color: #1aa8eb;
+  cursor: pointer;
+}
